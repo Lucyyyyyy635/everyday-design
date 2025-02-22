@@ -1,0 +1,477 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url('assets/bg1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    transition: background 0.5s ease;
+}
+.bg{
+    background: url('assets/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    transition: background 0.5s ease;
+}
+.bg1{
+    background: url('assets/bg1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    transition: background 0.5s ease;
+}
+.bg2{
+    background: url('assets/bg2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    transition: background 0.5s ease;
+}
+
+/* 头部样式 */
+header h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    color: #333;
+    animation: fadeIn 1s ease-out;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* 导航栏 */
+/* 现代风格按钮 (iOS / Material Design) */
+.nav-button {
+    text-decoration: none;
+    background: #007aff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #005ecb;
+    transform: scale(1.05);
+}
+
+/* 主要内容 */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    animation: fadeIn 2s ease-out;
+}
+
+.info-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Dark Mode 按钮 - Material Design */
+#darkModeToggle {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #FF5722, #E91E63);
+    border-radius: 8px;
+    border: none;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#darkModeToggle:hover {
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 点击时的波纹效果 */
+#darkModeToggle::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    opacity: 0;
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* 首页底部特征图片 */
+.feature-image {
+    margin-top: 60px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.feature-image img {
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ⬇⬇ 在这里添加新代码 ⬇⬇ */
+.feedback-container {
+    width: 80%;
+    max-width: 700px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 让所有内容水平居中 */
+}
+
+/* 反馈输入框 */
+.feedback-container textarea {
+    width: 95%; /* 让输入框更适应容器 */
+    height: 120px; /* 稍微加高，提高可读性 */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 1rem;
+    text-align: left;
+    display: block;
+    margin: 10px auto; /* 让输入框居中 */
+    resize: none; /* 禁止用户拖动调整大小 */
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2); /* 增加内阴影 */
+}
+
+/* 反馈按钮 */
+.feedback-container button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ff7e5f, #ff4e50);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feedback-container button:hover {
+    transform: scale(1.1);
+}
+
+/* 提交的反馈显示 */
+.feedback-display {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f3f3f3;
+    border-radius: 8px;
+    min-height: 50px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    animation: fadeInUp 1s ease-out;
+}
+/* 统一按钮样式 */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;  /* 轻微圆角 */
+    border: 2px solid #007BFF;  /* 现代网页常见的蓝色 */
+    background: #007BFF; /* 初始状态 */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15); /* 轻微阴影 */
+}
+
+/* 按钮 hover 状态 */
+.button:hover {
+    background: white;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.2); /* 增强 hover 立体感 */
+}
+
+/* 按钮点击（active）状态 */
+.button:active {
+    background: #0056b3;
+    color: white;
+    border-color: #0056b3;
+    transform: scale(0.98); /* 轻微缩小，模拟按下的感觉 */
+}
+
+/* 主要按钮 */
+.primary {
+    background: #007BFF; /* 标准蓝色 */
+    border-color: #007BFF;
+    color: white;
+}
+
+.primary:hover {
+    background: white;
+    color: #007BFF;
+}
+
+.primary:active {
+    background: #0056b3;
+    color: white;
+}
+
+/* 次要按钮 */
+.secondary {
+    background: white;
+    border-color: #007BFF;
+    color: #007BFF;
+}
+
+.secondary:hover {
+    background: #007BFF;
+    color: white;
+}
+
+.secondary:active {
+    background: #0056b3;
+}
+
+/* 取消按钮 */
+.danger {
+    background: #DC3545;
+    border-color: #DC3545;
+    color: white;
+}
+
+.danger:hover {
+    background: white;
+    color: #DC3545;
+}
+
+.danger:active {
+    background: #b21f2d;
+}
+/* Dark Mode 主题修复 */
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode header h1,
+.dark-mode header p {
+    color: white;
+}
+
+.dark-mode .info-box {
+    background: #222;
+    color: white;
+}
+
+/* 让页面整体更有层次感 */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    animation: fadeIn 2s ease-out;
+}
+
+.info-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 1s ease-out;
+    margin: 50px auto;
+}
+
+
+/* SearchButton */
+.search-line {
+    position: absolute;
+    left: 62px;
+    bottom: 10px;
+    width: 0px;
+    height: 2px;
+    background-color: rgb(251, 121, 0);
+    transition: 0.3s;
+}
+.search-box {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background-color: white;
+    box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.1);
+    height: 40px;
+    padding: 10px;
+    border-radius: 40px;
+    display: flex;
+}
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #222;
+    font-size: 16px;
+    line-height: 40px;
+    width: 0;
+    transition: 0.4s;
+}
+.search-btn {
+    color: #888888;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.search-box:hover .search-txt {
+    width: 200px;
+    padding: 0 12px;
+}
+.search-box:hover .search-btn {
+    background-color: #fff;
+    animation: rotate 0.4s linear;
+}
+.search-txt:focus {
+    width: 200px;
+    padding: 0 12px;
+}
+
+.search-txt:focus + .search-line {
+    width: 200px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* WordText */
+.word-box {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.word-box p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.word-box p:first-child {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.word-box p:nth-child(2) {
+    font-style: italic;
+}
+
+.word-box p:last-child {
+    color: #28A745;
+}
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Everyday Design</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg">
+
+    <header>
+        <h1 style="color: white !important">The Power of Everyday Design</h1>
+        <p style="color: white !important">How design shapes our daily experiences</p>
+    </header>
+
+    <!-- <nav class="nav-container">
+        <a href="good-design.html" class="nav-button">Explore Good Design</a>
+        <a href="comparison.html" class="nav-button">Compare Designs</a>
+        <a href="article.html" class="nav-button">Reference Article</a>
+    </nav> -->
+
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+
+    <section>
+        <div class="word-box">
+            <p>Many people believe that design skills belong only to designers possessing exclusive knowledge honed at art/design schools. However, several scholars have stated that designing is a fundamental process for most creative work.</p>
+            <nav class="nav-container">
+                <a href="good-design.html" class="nav-button">Explore Good Design</a>
+                <!-- <a href="comparison.html" class="nav-button">Compare Designs</a>
+                <a href="article.html" class="nav-button">Reference Article</a> -->
+            </nav>
+            <p>For example, Herbert Simon (1996) defines designing as relevant not only to designers but to all professionals who adapt their work to meet particular goals for the preferred situation. Donald Schön (1984) insists that no matter what the profession, practitioners—designers and other professionals—work through ‘reflections in action.’ Simon and Schön represent two paradigms in design that consistently state that designing is relevant not only to designers but also to other professionals.</p>
+            <nav class="nav-container">
+                <!-- <a href="good-design.html" class="nav-button">Explore Good Design</a> -->
+                <a href="comparison.html" class="nav-button">Compare Designs</a>
+                <!-- <a href="article.html" class="nav-button">Reference Article</a> -->
+            </nav>
+            <p>Yet, is designing necessarily and always ‘professional’? Alexander (1964) introduces the concept of unselfconscious design, which states that people unconsciously make a good fit from a misfit as soon as the misfit is recognized. Unselfconscious design, as Alexander explains, was recognized as traditional design before the advent of professional design and is observed in everyday lives.</p>
+            <nav class="nav-container">
+                <!-- <a href="good-design.html" class="nav-button">Explore Good Design</a>
+                <a href="comparison.html" class="nav-button">Compare Designs</a> -->
+                <a href="article.html" class="nav-button">Reference Article</a>
+            </nav>
+            <p>Wakkary and Maestri (2007, 2008) state that people create the best solutions from the boundaries of their artifacts and environments, which can be described as the metaphor of bricolage (Louridas, 1999). Adapting and changing everyday artifacts to improve their fit into people’s environments becomes a part of everyday activity.</p>
+        </div>  
+    </section>
+
+    <!-- SearchButton Start -->
+    <section>
+        <div class="search-box">
+            <a class="search-btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            <input type="text" class="search-txt" placeholder="Search" />
+            <div class="search-line"></div>
+        </div>  
+    </section>
+    <!-- SearchButton End -->
+
+    <section class="feedback-container">
+        <h2>We Value Your Feedback</h2>
+        <div class="feedback-container">
+            <h2>We Value Your Feedback</h2>
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" placeholder="Share your thoughts on everyday design..."></textarea>
+            <button id="submitFeedback" class="button danger">Submit</button>
+        </div>
+        
+        <!-- 反馈提交的显示区 -->
+        <div class="feedback-display" id="feedbackDisplay">
+            <h3>Submitted Feedback:</h3>
+            <p id="feedbackText"></p>
+        </div>        
+    </section>
+    <script>
+        document.getElementById('submitFeedback').addEventListener('click', function() {
+            var feedbackText = document.getElementById('feedback').value;
+            
+            if (feedbackText.trim() === "") {
+                alert("Please enter some feedback.");
+                return;
+            }
+        
+            // 创建一个新的span元素作为标签
+            var tag = document.createElement('span');
+            tag.classList.add('feedback-tag'); // 你可以定义这个类来设置样式
+            tag.innerText = feedbackText;
+        
+            // 添加点击事件来删除标签
+            tag.addEventListener('click', function() {
+                this.remove();
+            });
+        
+            // 将新标签添加到反馈显示区域
+            document.getElementById('feedbackText').appendChild(tag);
+        
+            // 清除输入框内容
+            document.getElementById('feedback').value = '';
+        
+            // 简单的CSS样式供参考
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .feedback-tag {
+                    background-color: #e0e0e0;
+                    border-radius: 12px;
+                    padding: 4px 8px;
+                    margin: 2px;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+        </script>
+</body>
+</html>

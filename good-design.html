@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples of Good Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button.css">
+</head>
+
+<body class="bg1">
+
+    <header>
+        <h1>Examples of Good Design</h1>
+        <!-- 页面顶部的返回主页按钮 -->
+        <div class="button-container">
+            <a href="index.html" class="button secondary">Home</a>
+            <a href="comparison.html" class="button primary">Compare Designs</a>
+            <!-- <a href="feedback.html" class="button primary">User Feedback</a> -->
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="design-example">
+            <h2>Good Design Example: Simple Toggle Switch Effects</h2>
+            <p class="text">This webpage demonstrates good design through simple toggle switch effects, reflecting key ideas from Everyday Design as a Design Resource. Just as everyday design repurposes common objects for new functions, using familiar elements like toggle switches ensures intuitive interactions. The clear visual contrast between “on” and “off” states enhances usability, making actions easy to distinguish at a glance. This approach mirrors the study’s emphasis on adapting everyday artifacts for practical use, highlighting that good design often relies on simplicity, familiarity, and clear communication.</p>
+            <div class="design">
+                <!-- 1 -->
+                <div class="design-box">
+                    <h3 class="design-title">Green Button</h3>
+                    <p class="design-description">This clean and bright green button is perfect for environmental or nature-related applications. It could be used to activate an eco-mode or confirm participation in ecological activities like planting trees.</p>
+                    <div class="toggle normal">
+                        <input id="normal" class="displayNone" type="checkbox" />
+                        <label class="toggle-item" for="normal"></label>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="design-box">
+                    <h3 class="design-title">Dark Red Button</h3>
+                    <p class="design-description">With its deep color, this button is ideal for emergency stops or exits, especially suitable for situations that require immediate response, such as safety systems or emergency evacuation apps</p>
+                    <div class="toggle checkcross">
+                        <input id="checkcross" class="displayNone" type="checkbox" />
+                        <label class="toggle-item" for="checkcross">
+                            <div class="check"></div>
+                        </label>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="design-box">
+                    <h3 class="design-title">Black Button with Panda Icon</h3>
+                    <p class="design-description">Due to its charming panda icon, this button is highly suitable for zoos, children's educational software, or any interface promoting wildlife conservation.</p>
+                    <div class="toggle dog-rollover">
+                        <input id="doggo" class="displayNone" type="checkbox" />
+                        <label class="toggle-item" for="doggo">
+                            <div class="dog">
+                                <div class="ear"></div>
+                                <div class="ear right"></div>
+                                <div class="face">
+                                    <div class="eyes"></div>
+                                    <div class="mouth"></div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="design-box">
+                    <h3 class="design-title">Grey Button (OFF)</h3>
+                    <p class="design-description">Its standard OFF label makes it an excellent choice for turning off devices or features, applicable from smart home devices to settings menus in software applications.</p>
+                    <div class="toggle checkbox-wrapper-5">
+                        <div class="check">
+                            <input id="check-5" type="checkbox">
+                            <label for="check-5"></label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="design-box">
+                    <h3 class="design-title">Yellow and Orange Gradient Button (YES)</h3>
+                    <p class="design-description">The warm hues of this button could be used to indicate positive responses in customer satisfaction surveys or feedback forms. It's also appropriate for any scenario that requires a clear affirmative answer.</p>
+                    <div class="toggle checkbox-wrapper-8">
+                        <input class="tgl tgl-skewed" id="cb3-8" type="checkbox" />
+                        <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="cb3-8"></label>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="design-box">
+                    <h3 class="design-title">Reddish-Orange Button (NO)</h3>
+                    <p class="design-description">The vivid color design intuitively conveys refusal or disagreement, making it suitable for voting, opting out of a service, or rejecting terms.</p>
+                <div class="toggle checkbox-wrapper-54">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+                <!-- 7 -->
+                <div class="design-box">
+                    <h3 class="design-title">Red Button (No)</h3>
+                    <p class="design-description">The casual style of this button makes it more suitable for informal or relaxed applications, such as an option to express disinterest on social media apps or an exit choice in games.</p>
+                <div class="toggle checkbox-wrapper-55">
+                    <label class="rocker rocker-small">
+                        <input type="checkbox">
+                        <span class="switch-left">Yes</span>
+                        <span class="switch-right">No</span>
+                    </label>
+                </div>
+            </div>
+                <!-- 8 -->
+                <div class="design-box">
+                    <h3 class="design-title">Green Button with Text ‘Yeah!’</h3>
+                    <p class="design-description">Emitting a positive and joyful signal, this button is perfect for completing tasks, celebrating victories, or in any situation where expressing happiness and agreement is needed.</p>
+                <div class="toggle checkbox-wrapper-10">
+                    <input class="tgl tgl-flip" id="cb5" type="checkbox" checked />
+                    <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Yeah!" for="cb5"></label>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

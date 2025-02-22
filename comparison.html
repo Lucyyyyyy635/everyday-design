@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good vs. Bad Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .form-box{
+            margin:auto;
+            width: 40%;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .good {
+            margin: auto;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .good:hover {
+            transform: translateY(-10px);
+        }
+
+        /* 表单字段样式 */
+        .good fieldset {
+            border: none;
+        }
+        .good legend {
+            font-size: 1.75em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .good div {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .good label {
+            width: 150px;
+            font-weight: 500;
+            color: #555;
+        }
+        .good input[type="text"],
+        .good input[type="email"],
+        .good select {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .good input[type="text"]:focus,
+        .good input[type="email"]:focus,
+        .good select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+       /* 单选按钮组 */
+       .good .radio-group {
+            margin-left: 150px; /* 对齐到输入框的位置 */
+        }
+        .good .radio-group label {
+            width: auto;
+            margin-left: 10px;
+            font-weight: normal;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .good input[type="radio"] {
+            display: none; /* 隐藏默认的单选框 */
+        }
+        .good input[type="radio"] + label::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: white;
+        }
+        .good input[type="radio"]:checked + label::before {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .good input[type="radio"]:checked + label::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        /* 提交按钮 */
+        .good button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .good button:hover {
+            background-color: #0056b3;
+        }
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            .good div {
+                flex-direction: column;
+            }
+            .good label {
+                margin-bottom: 5px;
+            }
+            .good input[type="text"],
+            .good input[type="email"],
+            .good select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Good vs. Bad Design</h1>
+    <!-- 页面顶部的返回主页按钮 -->
+<div class="button-container">
+    <a href="index.html" class="button secondary">Home</a>
+    <a href="comparison.html" class="button primary">Compare Designs</a>
+    <!-- <a href="feedback.html" class="button primary">User Feedback</a> -->
+</div>
+</header>
+
+<main class="content">
+    <section class="design-comparison">
+        <h2>Good Design</h2>
+        <div class=" good">
+            <form action="/submit-your-form-endpoint" method="post">
+                <fieldset>
+                    <legend>User Information Form</legend>
+            
+                    <!-- Text input -->
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name" required>
+                    </div>
+            
+                    <!-- Email input -->
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="user_email" required>
+                    </div>
+            
+                    <!-- Dropdown select -->
+                    <div>
+                        <label for="role">Role:</label>
+                        <select id="role" name="user_role">
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+            
+                    <!-- Radio buttons for gender selection -->
+                    <div class="radio-group">
+                        <label style="margin-left: 0;">Gender:</label><br>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+            
+                    <!-- Submit button -->
+                    <button id="goodDesignBtn" type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+
+    <section class="design-comparison">
+        <h2>Bad Design</h2>
+        <div class="form-box">
+            <form action="/submit-your-form-endpoint" method="post">
+                <!-- Text input -->
+                Name: <input type="text" name="user_name" required><br>
+                
+                <!-- Email input -->
+                Email: <input type="email" name="user_email" required><br>
+                
+                <!-- Dropdown select -->
+                Role: 
+                <select name="user_role">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="other">Other</option>
+                </select><br>
+                
+                <!-- Radio buttons for gender selection -->
+                Gender: 
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other<br>
+                
+                <!-- Submit button -->
+                <button id="badDesignBtn" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+</main>
+<script src="./confetti.js"></script>
+<script>
+    const confetti = new JSConfetti();
+
+    document.getElementById('goodDesignBtn').addEventListener('click', function(e) {
+    function fire(particleRatio, opts) {
+    confetti.addConfetti(Object.assign({
+        origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight },
+        particleCount: Math.floor(200 * particleRatio),
+        gravity: 0.2
+    }, opts));
+    }
+
+      fire(0.25, { spread: 26, startVelocity: 55 });
+      fire(0.2, { spread: 60 });
+      fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+      fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+      fire(0.1, { spread: 120, startVelocity: 45 });
+    });
+
+    document.getElementById('badDesignBtn').addEventListener('click', function() {
+        alert('GOOD JOB');
+    });
+</script>
+</body>
+</html>
